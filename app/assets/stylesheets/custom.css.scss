@@ -1,23 +1,20 @@
 
-
 @import 'bootstrap/dist/css/bootstrap';
-//.navbar{
-//  background-color: #AEB6BF  !important;
-//}
+
+.navbar{
+  background: black !important;
+}
+
 #logo{
   float: left;
   font-size: 1.7em;
-  color:black;
+  color:White;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
 
 }
-#logo:hover{
-  color: blue;
-  text-decoration: none;
 
-}
 .center {
   text-align: center;
 }
@@ -25,7 +22,8 @@
   background-image: asset-url('cover2.jpg');
   background-size: cover;
   height: 550px;
-background-position: center;
+background-position: fill;
+
 }
 .jumbotron h1{
   color: #fff;
