@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
 <div align="center">
-<div align=class=" col-sm-4">
+<div class= "col-sm-4">
 
 
 
@@ -11,5 +11,11 @@
 </div>
 
 <h4 align="center"><%= @user.username %>'s articles</h4>
+<div class="center">
+  <%= will_paginate @user_articles %>
+</div>
 
 <%= render 'articles/article', obj: @user.articles %>
+<div class="center">
+  <%= will_paginate @user_articles %>
+</div>

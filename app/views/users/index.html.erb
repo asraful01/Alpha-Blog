@@ -2,13 +2,17 @@
 
 <div align="center" class="col-sm">
 
+<div class="paginate">
+    <%=  will_paginate @user %>
+</div>
+
 <% @users.each do |user| %>
 
 <ul class="listing ">
 
 <div class="container col-sm">
 
-<div class="card col-md-4 ">
+<div class="card shadow col-md-4 ">
 
 <li><%= link_to gravatar_for(user), user_path(user) %></li>
 
@@ -27,5 +31,9 @@
 </ul>
 
 <% end %>
+
+<div class="paginate">
+  <%=  will_paginate @user %>
+</div>
 
 </div>

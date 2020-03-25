@@ -6,28 +6,71 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item ">
-        <%=  link_to "Articles", articles_path, class:"nav-link"  %>
-      </li>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <%=  link_to "Articles", articles_path, class:"nav-link"  %>
+        </li>
+            <li class="nav-item">
+            <%= link_to "users", users_path, class:'nav-link' %>
+          </li>
+<! if logged in show users -->
+      <% if logged_in? %>
       <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <%= link_to "New article", new_article_path, class:"dropdown-item" %>
-
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="#">Link</a>
-      </li>
+  <% end %>
+
+
+            <li class="nav-item col-md">
+                  <form class="form-inline my-2 my-md-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                </li>
+
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
+
+            <! right navbar -->
+<ul class="navbar-nav nav">
+  <li class="nav-item   ">
+    <% if logged_in? %>
+
+<li class="dropdown">
+  <a class="nav-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Your Profile </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to "view your profile", user_path(current_user), class:"dropdown-item" %>
+    <%= link_to "Edit your profile", edit_user_path(current_user), class:"dropdown-item" %>
+      <div class="dropdown-divider"></div>
+      <%= link_to "Log out", logout_path(current_user), class:"dropdown-item"%>
+    </div>
+</li>
+<%=  link_to "Log out", logout_path, method: :delete, class:"nav-link"  %>
+</li>
+
+  <! log in log out -->
+
+
+  <% else %>
+
+<li class="nav-item ">
+  <%=  link_to "log in", login_path, class:"nav-link"  %>
+</li>
+<li class="nav-item ">
+  <%=  link_to "Sign up", signup_path, class:"nav-link"  %>
+</li>
+<% end %>
+
+
+</ul>
   </div>
 </nav>

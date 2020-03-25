@@ -5,7 +5,6 @@
   background: black !important;
 }
 
-
 #logo{
   float: left;
   font-size: 1.7em;
@@ -13,6 +12,7 @@
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
+  font-family: Helvetica;
 
 }
 
@@ -24,7 +24,7 @@
   background-size: cover;
   height: 550px;
 background-position: center;
-margin-top: 20px;
+margin-top: 15px;
 
 }
 .jumbotron h1{
@@ -85,6 +85,13 @@ padding-left: 0;
 }
 .img-circle{
   border-radius: 50%;
+  margin-top: 10px;
+}
+
+.paginate{
+  margin-left: 45%;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 footer{
   margin-top: 45px;
