@@ -27,14 +27,30 @@
         </div>
       </li>
   <% end %>
-
-
-            <li class="nav-item col-md">
+  <ul class="navbar-nav nav">
+  <li class="nav-item">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "All Categories", categories_path , class:"dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <% Category.all.each do |category| %>
+            <%= link_to "#{category.name}", category_path(category), class:"dropdown-item"%>
+                <% end %>
+              <% if logged_in? and current_user.admin? %>
+              <div class="dropdown-divider"></div>
+         <%= link_to "Create New Category", new_category_path ,class:"dropdown-item"%>      
+        </div>
+        <% end %>
+        </div>
+      </li>
+      </ul>
+            <%# <li class="nav-item col-md-4">
                   <form class="form-inline my-2 my-md-0">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
-                </li>
+                </li> %>
 
     </ul>
 
