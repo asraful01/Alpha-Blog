@@ -1,4 +1,6 @@
-<h1 align="center"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<h1 align="center">
 <%= "Category: " + @category.name %></h1>
 
 
@@ -6,10 +8,10 @@
 <div align="center">
 <span class="badge col-md-2"><%= link_to "Edit Category Name", edit_category_path(@category)%></span>
   </div><%end%>
- 
+
 <div align='center' class='paginate'>
   <%=  will_paginate @category_articles, :previous_label =>'prev', :next_label =>'next' %>
-</div> 
+</div>
 <div align='center'>
 <%= page_entries_info @category_articles %>
 </div>
@@ -19,5 +21,3 @@
 <div class="paginate">
   <%=  will_paginate @category_articles, :previous_label =>'prev', :next_label =>'next' %>
 </div>
-
-

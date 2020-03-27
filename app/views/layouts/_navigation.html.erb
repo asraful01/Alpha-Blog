@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <nav class="navbar navbar-expand-lg navbar-dark ">
 
@@ -39,7 +40,7 @@
                 <% end %>
               <% if logged_in? and current_user.admin? %>
               <div class="dropdown-divider"></div>
-         <%= link_to "Create New Category", new_category_path ,class:"dropdown-item"%>      
+         <%= link_to "Create New Category", new_category_path ,class:"dropdown-item"%>
         </div>
         <% end %>
         </div>
