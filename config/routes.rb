@@ -14,11 +14,6 @@ post 'login', to: 'sessions#create'
 delete 'logout', to: 'sessions#destroy'
 resources :categories, except: [:destroy]
 
-resources :users do
-  member do
-    get :confirm_email
-  end
-end
 
 
 end
