@@ -5,5 +5,7 @@ end
 
 def about
 end
+def feature
+end
 
 end
